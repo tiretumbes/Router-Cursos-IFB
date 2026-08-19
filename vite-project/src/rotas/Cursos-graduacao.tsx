@@ -1,23 +1,11 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import ADS from './cursos/ads';
-import Letras from './cursos/letras';
-import Pedagogia from './cursos/pedagogia';
-import Secretariado from './cursos/ts';
+import { Link } from 'react-router-dom';
 
 export default function CursosGraduacao() {
   return (
     <div>
       <h1>Cursos de Graduação</h1>
 
-      <main>
-        <Routes>
-          <Route path="/" element={<ListaCursos />} />
-          <Route path="/ads" element={<ADS />} />
-          <Route path="/letras" element={<Letras />} />
-          <Route path="/pedagogia" element={<Pedagogia />} />
-          <Route path="/secretariado" element={<Secretariado />} />
-        </Routes>
-      </main>
+      <ListaCursos />
     </div>
   );
 }
@@ -28,16 +16,16 @@ function ListaCursos() {
       <h2>Nossos Cursos</h2>
       <ul>
         <li>
-          <Link to="/cursos-graduacao/ads">Tecnologia em Análise e Desenvolvimento de Sistemas</Link>
+          <Link to="/cursos-graduacao/1">Tecnologia em Análise e Desenvolvimento de Sistemas</Link>
         </li>
         <li>
-          <Link to="/cursos-graduacao/letras">Licenciatura em Letras – Língua Portuguesa</Link>
+          <Link to="/cursos-graduacao/2">Licenciatura em Letras – Língua Portuguesa</Link>
         </li>
         <li>
-          <Link to="/cursos-graduacao/pedagogia">Licenciatura em Pedagogia</Link>
+          <Link to="/cursos-graduacao/3">Licenciatura em Pedagogia</Link>
         </li>
         <li>
-          <Link to="/cursos-graduacao/secretariado">Tecnologia em Secretariado</Link>
+          <Link to="/cursos-graduacao/4">Tecnologia em Secretariado</Link>
         </li>
       </ul>
     </section>

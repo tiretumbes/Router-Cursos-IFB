@@ -20,7 +20,7 @@ export default function ADS() {
 
       const buscarCursos = async ()=> {
         try {
-          const {data} = await axios.get<Curso>('https://escola-api-dhkn.onrender.com/cursos/'+1);
+          const {data} = await axios.get<Curso>('https://escola-api-dhkn.onrender.com/cursos/'+id);
           setCurso(data);
           
 
