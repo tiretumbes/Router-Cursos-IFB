@@ -1,13 +1,45 @@
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import {useParams } from 'react-router-dom';
+import axios from 'axios';
+
+
+type Curso = {
+  titulo: string,
+  descricao:string
+}
 
 export default function ADS() {
+
+  const {id} = useParams();
+  const [curso,setCurso] = useState<Curso>();
+
+
+
+
+  useEffect(()=>{
+
+      const buscarCursos = async ()=> {
+        try {
+          const {data} = await axios.get<Curso>('https://escola-api-dhkn.onrender.com/cursos/'+1);
+          setCurso(data);
+          
+
+        } catch (error) {
+          alert("ERRO AO BUSCAR DADOS DO CURSO" + error)
+        }
+        
+  }
+
+  buscarCursos()
+
+
+  }, [id])
+
   return (
-    <section>
-      <h1>Tecnologia em Análise e Desenvolvimento de Sistemas</h1>
-      <p>
-        O curso de Tecnologia em Análise e Desenvolvimento de Sistemas forma profissionais capazes de analisar, desenvolver, testar e manter sistemas computacionais. Com foco em programação, banco de dados e desenvolvimento web, prepara técnicos para solucionar problemas tecnológicos e criar soluções inovadoras.
-      </p>
-      <Link to="/cursos-graduacao">← Voltar para Cursos</Link>
-    </section>
+    <div>
+      <h2>{curso?.titulo}</h2>
+      <h4>{curso?.descricao}</h4>
+      
+    </div>
   );
 }
