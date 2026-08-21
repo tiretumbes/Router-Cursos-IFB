@@ -30,6 +30,8 @@ export default function CadastrarCurso(){
 
         }).then((resp)=>{
             alert("Curso cadastrado com sucesso!");
+            setTitulo('');
+            setDescricao('');
         }).then((resp)=> resp.json()).then((data)=>{
             setCurso(data);
         }).catch((err)=>{
