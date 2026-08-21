@@ -33,7 +33,9 @@ export default function ADS() {
   buscarCursos()
 
 
-  }, [id])
+  }, [id]);
+
+
 
   return (
     <div>

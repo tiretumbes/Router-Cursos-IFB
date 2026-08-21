@@ -108,11 +108,12 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition:  0.2s ease-in-out;
 }
 
 button:hover {
   background-color: #2D6A4F;
+   transform: scale(15 .05);
 }
 
 .card {
@@ -130,3 +131,11 @@ footer {
   padding: 1.5rem;
   margin-top: 3rem;
 }
+.input-curso{
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
